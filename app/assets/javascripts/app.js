@@ -1,25 +1,29 @@
+ var songs = []
+
  $(function(){
+    var audio = $('<audio>', {  
+      autoPlay : 'autoplay',  
+      controls : 'controls'  
+    });  
+    function addSource(elem, path) {  
+      $('<source>').attr('src', path).appendTo(elem);  
+    }  
     $('body').on('keypress', function(e){
         if (e.which == 13) {
-            $.ajax({
-                url: '/test',
-                method: 'post',
-                dataType: 'json',
-                data: { genre: $('#genre').val(), city: $('#city').val() }
-            })
-            .success( function(data){
-                console.log(data);
- 
-                for (var i=0;i<10;i++){
-                    var foo = $('<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + data[i].id +'&color=01DFA5&show_comments=false&show_artwork=true&show_playcount=false&liking=false&theme_color=01DFA5&sharing=false&buying=false&show_user=false&show_artwork=false"></iframe>');
-                    $('#ul').append($('#player'));
-                    $('#ul').append('<img src="' + data[i].waveform_url + '">')
-                }
-            })
-        }
-    })
-    $('#myspan').toggleClass('glyphicon-heart-empty glyphicon-heart')
-  });
+            SC.get("/tracks", {q:""+$('#city').val()+"", genres:""+$('#genre').val()+"", limit: 10}, function(tracks){
+            songs = tracks;
+            console.log(songs);
+            for (i = 0; i < songs.length; i++) {
+                songs[i].stream_url = songs[i].stream_url+"?client_id=4c2a3b5840e0236549608f59c2cd7d07"
+                console.log(songs[i].stream_url)
+
+            }
+            audio.appendTo('body');
+            addSource(audio, songs[0].stream_url);
+            });
+        };
+    });
+});
 
 
   
