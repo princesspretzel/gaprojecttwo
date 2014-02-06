@@ -7,6 +7,7 @@ var audioView = function audioView() {
     var song;
     var track = 0;
     var audio = new Audio
+    audio.id="test"
     function newSong() {
         song = songs[track]
         lastSong=songs[track-1]
@@ -17,6 +18,10 @@ var audioView = function audioView() {
             track++;
             newSong();
         })
+        $('#player').append( $( "#test" ));
+        $('#test').append("<progress></progress>");
+        console.log($('#test'));
+        $('#player').removeClass("hidden");
         $('#art').empty();
         $('#art').attr('src', song.artwork_url);
         $('#song-info').empty();

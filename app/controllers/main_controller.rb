@@ -5,7 +5,7 @@ class MainController < ApplicationController
         if check.length == 0
           @client = SoundCloud.new(:client_id => '4c2a3b5840e0236549608f59c2cd7d07')
           @tracks = @client.get('/tracks', q: params[:city], genres: params[:genre], filter: 'streamable')
-
+          binding.pry
           @combo = Combo.new
           @combo.city = params[:city]
           @combo.genre = params[:genre]
