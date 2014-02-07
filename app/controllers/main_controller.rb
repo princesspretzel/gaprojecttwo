@@ -63,11 +63,11 @@ class MainController < ApplicationController
     def like
         found = Opinion.where("song_id = ? AND user_id = ?", params[:song_id], current_user)
         if found == []
-            foo = Opinion.new
-            foo.song_id = Song.find(params[:song_id]).id
-            foo.user = current_user
-            foo.enjoyed = true
-            foo.save
+            opinion = Opinion.new
+            opinion.song_id = Song.find(params[:song_id]).id
+            opinion.user = current_user
+            opinion.enjoyed = true
+            opinion.save
         else
             found[0].delete
         end
@@ -77,10 +77,10 @@ class MainController < ApplicationController
     def favorite
         @combo = Combo.where("city = ? AND genre = ?", params[:city],params[:genre])[0]
         unless @combo == nil
-            foo = Favorite.new
-            foo.user = current_user
-            foo.combo = @combo
-            foo.save!
+            favorite = Favorite.new
+            favorite.user = current_user
+            favorite.combo = @combo
+            favorite.save!
         else
             find[0].destroy
         end
