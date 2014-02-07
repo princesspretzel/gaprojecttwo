@@ -1,0 +1,537 @@
+/*============COVER.CSS==========================================================================*/
+
+/*===Formatting meant to affect landing page only====================================================*/
+
+/*
+ * Globals
+ */
+
+/* Links a,*/
+i:focus,
+i:hover {
+  color:red;
+}
+a:focus,
+a:hover {
+  color: #EFE7BE;
+}
+
+.modal-footer a {
+  color: #002635;
+}
+
+.btn-make {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #EFE7BE;
+  border: 1px solid #EFE7BE;
+}
+audio:hover, audio:focus, audio:active, i:hover, i:focus, i:active
+{
+-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+-moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+-webkit-transform: scale(1.05);
+-moz-transform: scale(1.05);
+transform: scale(1.05);
+}
+
+audio
+{
+-webkit-transition:all 0.5s linear;
+-moz-transition:all 0.5s linear;
+-o-transition:all 0.5s linear;
+transition:all 0.5s linear;
+-moz-box-shadow: 2px 2px 4px 0px #006773;
+-webkit-box-shadow:  2px 2px 4px 0px #006773;
+box-shadow: 2px 2px 4px 0px #006773;
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #002635;
+}
+body {
+  color: #EFE7BE;
+/*  text-align: center;
+*//*  text-shadow: 0 1px 3px rgba(0,0,0,.5);*/  
+/*  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+*/}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.make-scene {
+/*  float:right;
+*/}
+
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #EFE7BE; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #EFE7BE;
+  border-bottom-color: #EFE7BE;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+
+
+
+.modal {
+  /*background-color: #EFE7BE;*/
+  text-shadow: none;
+}
+
+.modal-header, .modal-content {
+   color: #002635;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+.double-bottom-border {
+  padding-bottom: 7px;
+  border-bottom: double white;
+}
+
+#player {
+/*  margin-bottom: 5%;
+*/  float: left;
+}
+
+.make-scene{
+  margin-bottom: 5%;
+}
+
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+#art {
+  height: 200px;
+  width: 200px;
+  position: relative; 
+  z-index: .2;
+}
+
+#current-heart{
+  margin-top: 10px;
+  z-index: 1000;
+}
+
+#play {
+  left: 10%;
+  bottom: 6%;
+  z-index: 1000;
+}
+
+#pause {
+  right: 55%;
+  bottom: 6%;
+  z-index: 1000;
+}
+
+#next {
+  right: 28%;
+  bottom: 6%;
+  z-index: 1000;
+}
+
+#song-info {
+  margin-bottom: 6%;
+}
+
+.text-centered{
+  text-align: center;
+}
+
+.icon {
+font-size: xx-large;
+}
+
+.text-shadow{
+  text-shadow: black 3px 3px 5px;
+}
+
+/*.pos-absolute{
+  position: absolute;
+}*/
+
+.invisible{
+  opacity: 0;
+}
+
+#stripe1 { 
+  border-bottom: 50px solid orange; 
+  border-left: 50px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#stripe2 { 
+  border-bottom: 100px solid purple; 
+  border-left: 100px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#stripe3 { 
+  border-bottom: 150px solid blue; 
+  border-left: 150px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*============STYLES.CSS==========================================================================*/
+
+/*===Formatting meant to affect main page only====================================================*/
+/*
+h1, h2, h3, h4, h5, h6, body, footer, p {
+    color: white;
+    font-family: Syncopate;
+}
+
+body {
+ background-color: #243640;
+}
+
+h1 {
+  letter-spacing: 3px;
+  font-size: 3em;
+}
+
+p {
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+footer {
+  height: 150px;
+  position: relative;
+  bottom: 0;
+}
+
+@media screen{
+  footer {
+    width: 100%;
+  }
+}
+
+#page-top {
+  margin-bottom: 72px;
+}
+
+#player {
+  height: 200px;
+  padding-left:0px;
+  margin-bottom: 100px;
+}
+
+#cover-image {
+  height: 100px;
+  width: 100px;
+  position: relative; 
+  z-index: .2;
+}
+
+#art {
+  height: 100px;
+  width: 100px;
+  position: relative; 
+  z-index: .2;
+}
+
+#current-rocket{
+  margin-bottom: 14px;
+}
+
+#sign-in-btn{
+  margin-right:20px;
+}
+
+#alb-cover{
+  height:200px;
+  width: 200px;
+  margin-right: 15px;
+  float:left;
+}
+
+#heart{
+  z-index: 1;
+  color: white;
+  left: 0;
+  margin-left: 48px;
+}
+
+#play {
+  left: 0;
+  bottom: 0;
+  margin-left: 51px;
+  margin-bottom: 7px;
+}
+
+#pause {
+  bottom: 0;
+  margin-bottom: 6px;
+  margin-left: -60px;
+}
+
+#next {
+  right: 28%;
+  bottom: 6%;
+}
+
+#stripe1 { 
+  border-bottom: 50px solid orange; 
+  border-left: 50px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#stripe2 { 
+  border-bottom: 100px solid purple; 
+  border-left: 100px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#stripe3 { 
+  border-bottom: 150px solid blue; 
+  border-left: 150px solid transparent; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#last-played-div {
+  margin-left: 25px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#last-played-content {
+  margin-top: 13px;
+}
+
+
+#last-played-rocket {
+  margin-left: 25px;
+}
+
+#stripes-div {
+  position: relative;
+}
+
+.icon {
+  margin-top: 7px;
+  font-size: 25px;
+}
+
+.navbar {
+  font-family: Syncopate;
+  /*background-color: #243640;
+  border-color: #243640;
+  color: white;
+}
+
+.navbar-inner {
+  background-color: #243640;
+  color: white;
+}
+
+.logo { 
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background: orange; 
+  -moz-border-radius: 70px; 
+  -webkit-border-radius: 70px; 
+}
+
+.form-inputs {
+  display: inline-block;
+}
+
+.form-actions {
+  display: inline-block;
+}
+
+.margin-top {
+  margin-top: 23px;
+}
+
+.no-margin-top {
+  margin-top: 0px;
+}
+
+.ticker{
+  height: 15px;
+  width: 185px;
+}
+
+.rocket-icon {
+  height: 40px;
+  margin-bottom: 14px;
+  transform:rotate(20deg);
+  -ms-transform:rotate(20deg); /* IE 9 
+  -webkit-transform:rotate(20deg); /* Safari and Chrome 
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.pos-absolute{
+  position: absolute;
+}
+
+.text-shadow{
+  text-shadow: black 3px 3px 5px;
+}
+
+.invisible{
+  opacity: 0;
+}*/
+
+#inner-box { 
+  width: 100%;
+  margin-top: 115px;
+}
+
+#inner-box i {
+ margin: 0 17px 0 17px;
+}

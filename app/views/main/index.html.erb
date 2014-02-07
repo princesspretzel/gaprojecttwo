@@ -1,0 +1,83 @@
+<div class="inner cover">
+  <% unless user_signed_in? %>
+  <h1 class="cover-heading">Make a Scene.</h1>
+  <p class="lead">ever wonder what music you might be missing out on? with tinyplanet.fm you can find, like, and share local artists playing the music you want, anywhere. </p>
+  <p class="lead">
+    <a class="btn btn-lg btn-default" data-toggle="modal" data-target="#sign_up">SIGN UP LOSER</a>
+  </p>
+</div><!-- END inner cover DIV -->
+
+<% else %>
+
+<div class="row">
+
+  <div class="make-scene col-lg-3">
+    <p>I'm listening to the...</p>
+    <input name='genre' id='genre' class="form-control" placeholder='scene'></input>
+    <br>
+    <p>scene in...</p>
+    <input name='city' class='form-control' id='city' placeholder='city'></input>
+    <div class="row">
+      <div class= "col-lg-12">
+        <a class="btn btn-sm btn-default btn-make" id="makecombo">make the scene</a>
+        <a class="btn btn-sm btn-default btn-make" id="savecombo">save the scene</a>
+      </div>
+    </div>
+  </div><!-- END make-scene DIV -->
+
+  <div id="player" class="col-lg-offset-1 col-lg-8 hide">
+
+    <div class="row">
+
+      <div id="album-cover" class="col-lg-6 text-centered">
+        <div id="cover" style="background: url('http://placekitten.com/300/300'); width:300px; height:300px; background-size:cover;">
+          <i id="current-heart" class="fa fa-heart-o icon pos-absolute text-shadow"></i>
+          <div id="inner-box">
+            <i id="play" class="fa fa-play icon pos-absolute text-shadow"></i>
+            <i id="pause" class="fa fa-pause icon pos-absolute text-shadow"></i>
+            <i id="next" class="fa fa-forward icon pos-absolute text-shadow"></i>
+          </div>
+        </div>
+      </div><!-- END album-cover DIV -->
+
+      <div class="album-descriptors col-lg-6 text-centered">
+        <h4 id="artist-info">
+
+        </h4>
+        <h4 id="song-info">
+          Song:
+        </h4>
+
+      </div><!-- END album-descriptors DIV -->
+
+    </div><!-- END row DIV -->
+
+  </div><!-- END player DIV -->
+  <div class ="row">
+    <p> your favorite scenes</p>
+    <div id="userscombos">
+
+    </div>
+  </div>
+</div><!-- END row DIV -->
+
+<div class="mastfoot"> 
+  <div class="row">
+    <div id="last-played-div inner" class="col-lg-4">
+      <h4>you last played:</h4> 
+      <div id="last-played-content" class="row">
+        <div class="col-lg-6">  
+          <h5 id="lastSong" class="no-margin-top"></h5> 
+        </div>
+        <div class="col-lg-6">
+          <i id="last-heart" class="fa fa-heart-o icon"></i>        
+          <i id="last-rocket" class="icon fa fa-rocket "></i>
+        </div>
+      </div><!-- END last-played-content DIV -->
+    </div><!-- END last-played-div inner DIV -->
+
+  </div><!-- END row DIV -->
+
+</div><!-- END mastfoot DIV -->
+
+<% end %>

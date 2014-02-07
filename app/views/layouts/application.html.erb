@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TinyPlanet.fm</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  </head>
+
+  <body>   
+    <%= render "users/login_modal" %>
+
+    <%= render "users/sign_up_modal" %>
+    <%= render 'users/edit_modal' %>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">tinyplanet.fm</h3>
+              
+              <ul class="nav masthead-nav">
+                <% if user_signed_in? %>
+                  <li class="active"> <%= link_to current_user.username, "/#edit", "data-toggle" => "modal"  %>
+                  </li>
+                  <li><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
+                <% else %>
+                  <li class="active"><%= link_to "Login", "#login", "data-toggle" => "modal" %></li>
+                  <li><%= link_to "sign up", "#sign_up", "data-toggle" => "modal"%> </li>  
+                <% end %>
+              </ul>
+            
+            </div>
+            <!-- END inner DIV -->
+          </div>
+          <!-- END masthead clearfix DIV -->
+        </div>
+        <!-- END cover-container DIV -->
+
+        <div class="container">
+          <%= yield %> 
+        </div>
+        <!-- END container DIV -->
+
+      </div>
+      <!-- END site-wrapper-inner DIV -->
+    </div>
+    <!-- END site-wrapper DIV -->
+
+    <!-- <div id="stripes-div">
+      <div id="stripe3"></div>
+      <div id="stripe2"></div>
+      <div id="stripe1"></div> 
+    </div> --><!-- END stripes-div DIV -->
+
+  </body>
+  
+</html>
