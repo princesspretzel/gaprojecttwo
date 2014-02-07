@@ -52,7 +52,7 @@ class MainController < ApplicationController
         end
         @playlist = rand_front + unliked
          respond_to do |format| 
-          format.json { render :json => @playlist.to_json}
+          format.json { render :json => @playlist.to_json }
         end
     end
     
@@ -75,16 +75,16 @@ class MainController < ApplicationController
     end
 
     def favorite
-        find = Favorite.where("combo_id = ? AND user_id = ?", params[:combo_id], current_user)
-        if find == []
+        @combo = Combo.where("city = ? AND genre = ?", params[:city],params[:genre])[0]
+        unless @combo == nil
             foo = Favorite.new
-            foo.user_id = current_user
-            foo.combo_id = params[:combo_id]
-            foo.save
+            foo.user = current_user
+            foo.combo = @combo
+            foo.save!
         else
             find[0].destroy
         end
-        render :nothing => true
+        comboserve
     end
 
 
