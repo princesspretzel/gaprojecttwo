@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require sdk
+//= require jquery.instagram
 //= require_tree .

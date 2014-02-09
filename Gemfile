@@ -10,6 +10,8 @@ gem 'soundcloud'
 gem 'devise'
 # gem 'twitter-bootstrap-rails'
 gem 'simple_form'
+gem 'instagram'
+gem 'instagramjs-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +30,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

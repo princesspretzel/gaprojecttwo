@@ -40,8 +40,10 @@ class MainController < ApplicationController
                 end
             end
         end
+
         liked.shuffle!
         unliked.shuffle!
+        # binding.pry
         rand_front = unliked.shift(liked.length * 2)
         rand_front += liked
         rand_front.shuffle!
@@ -51,6 +53,11 @@ class MainController < ApplicationController
           puts "No songs liked in this scene yet :("
         end
         @playlist = rand_front + unliked
+        # @playlist.each do |song|
+        #     if song == 0
+        #         binding.pry
+        #     end
+        # end
          respond_to do |format| 
           format.json { render :json => @playlist.to_json }
         end
@@ -71,8 +78,16 @@ class MainController < ApplicationController
         else
             found[0].delete
         end
-        render :nothing => true
+        liked?
     end
+
+    def liked?
+        @liked = Opinion.where("song_id = ? AND user_id = ?", params[:song_id], current_user)[0]
+        respond_to do |format| 
+          format.json { render :json => @liked.to_json }
+        end
+    end
+
 
     def favorite
         @combo = Combo.where("city = ? AND genre = ?", params[:city],params[:genre])[0]

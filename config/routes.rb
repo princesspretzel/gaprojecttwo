@@ -11,7 +11,9 @@ Tinyplanet::Application.routes.draw do
 
   post '/favorite' => 'main#favorite'
 
-  post '/liked' => 'main#like'
+  post '/like' => 'main#like'
+
+  get '/liked' => 'main#liked?'
 
   get '/comboserve' => 'main#comboserve'
 

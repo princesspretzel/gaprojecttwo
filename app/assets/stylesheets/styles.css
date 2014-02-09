@@ -57,6 +57,10 @@ box-shadow: 2px 2px 4px 0px #006773;
 border-radius:7px 7px 7px 7px ;
 }
 
+
+.instagram {
+  display: inline-flex;
+}
 /*
  * Base structure
  */
