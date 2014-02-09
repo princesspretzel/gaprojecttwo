@@ -37,11 +37,14 @@ class MainController < ApplicationController
 
         liked.shuffle!
         unliked.shuffle!
-        binding.pry
         rand_front = unliked.shift(liked.length * 2)
         rand_front += liked
         rand_front.shuffle!
-        binding.pry
+        # if liked_most != 0  
+        #   rand_front.unshift(liked_most)
+        # else
+        #   puts "No songs liked in this scene yet :("
+        # end
         @playlist = rand_front + unliked
         # @playlist.each do |song|
         #     if song == 0
