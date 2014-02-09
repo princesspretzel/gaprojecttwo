@@ -139,10 +139,7 @@ $(function(){
 
     $('#makecombo').on("click", function (){
         currentCombo = {genre: $('#genre').val(), city: $('#city').val()}
-        serve();
-        getLocation(currentCombo);
-        $('#currentscene').empty();
-        $('#currentscene').text("The Scene in "+currentCombo.city)
+        serve();       
     })
 
 
@@ -152,25 +149,15 @@ $(function(){
             serve();
         }
     })
-  
-      // $('.instagram').on('willLoadInstagram', function(event, options) {
-      //   console.log(options);
-      // });
-      // $('.instagram').on('didLoadInstagram', function(event, response) {
-      //   console.log(response);
-      // });
-      // $('.instagram').instagram({
-      //   hash: 'neworleans',
-      //   count: 5,
-      //   clientId: 'b82a6dc9b365436fae8919cfe9c53fba'
-      // });
 });
   
 
 
 
-
-    var serve = function serve(){
+var serve = function serve(){
+        getLocation(currentCombo);
+        $('#currentscene').empty();
+        $('#currentscene').text("The Scene in "+currentCombo.city)
         $.ajax({
             url: '/serve',
             method: 'POST',

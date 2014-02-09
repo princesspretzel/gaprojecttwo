@@ -31,27 +31,17 @@ class MainController < ApplicationController
             if song.users.count == 0
                 unliked.push(song)
             else
-                if song.users.count > high_count
-                    high_count = song.users.count
-                    liked << liked_most if liked_most
-                    liked_most = song
-                else
-                    liked.push(song)
-                end
+                liked.push(song)
             end
         end
 
         liked.shuffle!
         unliked.shuffle!
-        # binding.pry
+        binding.pry
         rand_front = unliked.shift(liked.length * 2)
         rand_front += liked
         rand_front.shuffle!
-        if liked_most != 0  
-          rand_front.unshift(liked_most)
-        else
-          puts "No songs liked in this scene yet :("
-        end
+        binding.pry
         @playlist = rand_front + unliked
         # @playlist.each do |song|
         #     if song == 0
