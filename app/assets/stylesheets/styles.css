@@ -61,6 +61,12 @@ border-radius:7px 7px 7px 7px ;
 .instagram {
   display: inline-flex;
 }
+
+
+.favscene {
+  margin-top: 2%;
+  margin-left: 1%;
+}
 /*
  * Base structure
  */

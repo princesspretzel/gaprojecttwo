@@ -21,7 +21,7 @@ var audioView = function audioView() {
         $('audio').remove();
         audio = new Audio
         audio.controls=true;
-        $('#player').append(audio)
+        // $('#player').append(audio)
         song = songs[track]   
         audio.src = song.url;
         id = song.id;
@@ -35,6 +35,7 @@ var audioView = function audioView() {
         $('#artist-info').text(song.artist)
         $('#song-info').empty();
         $('#song-info').text(song.name);
+        $('.mastfoot').removeClass("hidden")
         if (lastSong == ""){
         } else {
         $('#lastSong').text(lastSong.name);
@@ -247,7 +248,7 @@ var getLocation = function getLocation(currentCombo) {
 
 var createPhotoElement = function createPhotoElement(photo) {
       var innerHtml = $('<img>')
-        .addClass('instagram-image')
+        .addClass('instagram-image').addClass('img-responsive')
         .attr('src', photo.images.thumbnail.url);
 
       innerHtml = $('<a>')

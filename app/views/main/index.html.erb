@@ -15,7 +15,7 @@
 
 <div class="row">
 
-  <div class="make-scene col-lg-3">
+  <div class="make-scene col-lg-4">
     <p>I'm listening to the...</p>
     <input name='genre' id='genre' class="form-control" placeholder='scene'></input>
     <br>
@@ -27,9 +27,14 @@
         <a class="btn btn-sm btn-default btn-make" id="savecombo">save the scene</a>
       </div>
     </div>
+      <div class ="row favscene">
+    <p class="lead"> your favorite scenes:</p>
+      <div id="userscombos">
+    </div>
+    </div>
   </div><!-- END make-scene DIV -->
 
-  <div id="player" class="col-lg-offset-1 col-lg-8 hide">
+  <div id="player" class="col-lg-8 hide">
 
     <div class="row">
 
@@ -44,39 +49,32 @@
         </div>
       </div><!-- END album-cover DIV -->
 
-      <div class="album-descriptors col-lg-6 text-centered">
+      <div class="album-descriptors col-lg-5 text-centered">
         <h4 id="artist-info">
 
         </h4>
         <h4 id="song-info">
           Song:
         </h4>
+      <p id="currentscene"> the scene in....</p>
+      <div class="instagram">
+      </div>
+    </div>
+  </div>
 
       </div><!-- END album-descriptors DIV -->
 
     </div><!-- END row DIV -->
-
   </div><!-- END player DIV -->
-  </div><!-- END row DIV -->
-  <div class ="row">
-    <p> your favorite scenes</p>
-    <div id="userscombos">
-
-    </div>
-  </div>
+</div><!-- END row DIV -->
 
 
-<div class = "row">
-<div class="col-lg-offset-5 col-lg-7">
-<p id="currentscene"> the scene in....</p>
-<div class="instagram">
-</div>
-</div>
-</div>
+
+
 
 <div class="mastfoot"> 
   <div class="row">
-    <div id="last-played-div inner" class="col-lg-4">
+    <div id="last-played-div inner" class="col-lg-8">
       <h4>you last played:</h4> 
       <div id="last-played-content" class="row">
         <div class="col-lg-6">  
@@ -84,13 +82,11 @@
         </div>
         <div class="col-lg-6">
           <i id="last-heart" class="fa fa-heart-o icon"></i>        
-         <!--  <i id="last-rocket" class="icon fa fa-rocket "></i> -->
+          <!--  <i id="last-rocket" class="icon fa fa-rocket "></i> -->
         </div>
       </div><!-- END last-played-content DIV -->
     </div><!-- END last-played-div inner DIV -->
-
-  </div><!-- END row DIV -->
-
+   </div>
 </div><!-- END mastfoot DIV -->
 
 <% end %>
