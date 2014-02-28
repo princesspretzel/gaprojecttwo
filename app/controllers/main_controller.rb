@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
     def serve
+        # returns an array of one, [0]] could be .first
         @combo = Combo.where("city = ? AND genre = ?", params[:city],params[:genre])[0]
         if @combo == nil
           @client = SoundCloud.new(:client_id => '4c2a3b5840e0236549608f59c2cd7d07')
@@ -17,6 +18,7 @@ class MainController < ApplicationController
             song.name = track.title
             song.url = "#{track.stream_url}?client_id=4c2a3b5840e0236549608f59c2cd7d07"
             song.soundcloud_id = track.id
+            # default artwork
             song.artwork_url = track.artwork_url || 'http://icons.iconarchive.com/icons/dan-wiersma/solar-system/512/Uranus-icon.png'
             song.artwork_url = song.artwork_url.gsub("large", "t300x300")
             song.artist = track.user.username

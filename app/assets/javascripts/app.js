@@ -1,5 +1,5 @@
 var songs;
-var play ="";
+var play = "";
 var combo_id;
 var save_combos;
 var currentCombo;
@@ -268,6 +268,6 @@ function didLoadInstagram(event, response) {
       $.each(response.data, function(i, photo) {
         $(self).append(createPhotoElement(photo));
       });
-    }
+}
 
 
